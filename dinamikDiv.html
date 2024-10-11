@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Div Size Display</title>
+  <style>
+    .container {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 20px;
+      row-gap: 40px;
+    }
+
+    .box {
+      background-color: lightblue;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: black;
+    }
+    .box-sp{
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr ;
+      column-gap: 20px;
+      row-gap: 40px;
+
+    }
+    
+    .pink {
+      background-color: lightpink;
+    }
+    .p{
+      
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="box-sp">
+    <div> 123123</div>
+    <div>asdafasdasd</div>
+  </div>
+  <div class="box pink">1fr</div>
+  <div class="box">2fr</div>
+  <div class="box pink">1fr</div>
+  <div class="box">2fr</div>
+  <div class="box pink">1fr</div>
+</div>
+
+<script>
+  function updateDivSizes() {
+    const divs = document.querySelectorAll('.box');
+    divs.forEach(div => {
+      const width = div.offsetWidth;
+      div.textContent = `${width}px`;
+    });
+  }
+
+  // // Run the function on page load
+  // window.onload = updateDivSizes;
+
+  // Update sizes when the window is resized
+  // window.onresize = updateDivSizes;
+</script>
+
+</body>
+</html>
